@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    margin: 0 auto;
+    background-color: papayawhip;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+
+}
+
+ul{
+    width: 66%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul a {
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+figure{
+    width: 250px;
+}
+
+figure img {
+ width: 250px;
+}
