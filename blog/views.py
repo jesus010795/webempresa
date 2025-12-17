@@ -10,6 +10,6 @@ def list_posts(request):
     return render(request, "blog/blog.html", {"posts": posts})
 
 
-def list_categories(request):
-    categories = Category.objects.all()
-    return render(request, "blog/categories.html", {"categories": categories})
+def category(request, category_id):
+    category_posts = Category.objects.get(pk=category_id).posts.all()
+    return render(request, "blog/category.html", {"category_posts": category_posts})
