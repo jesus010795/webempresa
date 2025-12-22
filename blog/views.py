@@ -11,5 +11,5 @@ def list_posts(request):
 
 
 def category(request, category_id):
-    category_posts = Category.objects.get(pk=category_id).posts.all()
-    return render(request, "blog/category.html", {"category_posts": category_posts})
+    data = Category.objects.get(pk=category_id).posts.all()
+    return render(request, "blog/category.html", {"data": data})
