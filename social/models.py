@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class Socialnetwork(models.Model):
+class Links(models.Model):
     key = models.SlugField(verbose_name="Nombre clave", max_length=100, unique=True)
     name = models.CharField(max_length=50, verbose_name="Red social")
     url = models.URLField(max_length=200, null=True, blank=True, verbose_name="Enlace")
