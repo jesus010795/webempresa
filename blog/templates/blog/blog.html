@@ -27,7 +27,7 @@
                     {% for category in post.categories.all %} 
                     <a href="{% url 'category' category.id %}" class="link" style="text-decoration: none;">
                       {{category.name }}{% if not forloop.last %},{% endif %}
-                      </a>
+                    </a>
                     {% endfor %}
                   </em></span>
               </p>
