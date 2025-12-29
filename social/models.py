@@ -10,7 +10,7 @@ class Links(models.Model):
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualizacion")
 
     def __str__(self):
-        return self.title
+        return self.name
 
     class Meta:
         verbose_name = "Enlace"

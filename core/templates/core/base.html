@@ -18,6 +18,9 @@
     <!-- Fuentes -->
     <!-- <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css" integrity="sha512-M5Kq4YVQrjg5c2wsZSn27Dkfm/2ALfxmun0vUE3mPiJyK53hQBHYCVAtvMYEC7ZXmYLg8DVG4tF8gD27WmDbsg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
@@ -66,30 +69,33 @@
     </nav>
 
     {% block content %} {% endblock %}
+    {% comment %} {{FACEBOOK_URL}} {% endcomment %}
 
     <!-- Pié de página -->
     <footer class="footer text-faded text-center py-5">
       <div class="container">
         <p class="m-0">
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-              <i class="fa-brands fa-instagram"></i>
-	            <i class="fa fa-circle fa-stack-2x"></i>
-              <!-- <i class="fa-brands fa-square-instagram"></i> -->
-	          </span>
-	        </a>
+          {% if INSTAGRAM_URL %}
+            <a href="{{INSTAGRAM_URL}}" class="link" target="_blank" rel="noopener noreferrer">
+              <span class="fa-stack fa-lg">
+                <i class="fa-brands fa-square-instagram"></i>
+              </span>
+	          </a>
+          {% endif %}
+          {% if FACEBOOK_URL %}
+            <a href="{{FACEBOOK_URL}}" class="link" target="_blank" rel="noopener noreferrer">
+              <span class="fa-stack fa-lg">
+                <i class="fa-brands fa-square-facebook"></i>
+              </span>
+            </a>
+          {% endif %}
+          {% if TWITTER_URL %}
+            <a href="{{TWITTER_URL}}" class="link" target="_blank" rel="noopener noreferrer">
+              <span class="fa-stack fa-lg">
+                <i class="fa-brands fa-square-twitter"></i>
+              </span>
+            </a>
+          {% endif %}
 	    </p>
         <p class="m-0 mbt">
         	<a href="sample.html" class="link">Política de privacidad</a> ·
