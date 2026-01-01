@@ -5,6 +5,7 @@ from django.db import models
 class Pages(models.Model):
     title = models.CharField(max_length=100, verbose_name="Titulo")
     content = models.TextField(verbose_name="Contenido")
+    order = models.SmallIntegerField(verbose_name="Orden", default=0)
     created = models.DateField(auto_now_add=True, verbose_name="Fecha de creacion")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualizacion")
 
@@ -14,4 +15,4 @@ class Pages(models.Model):
     class Meta:
         verbose_name = "Pagina"
         verbose_name_plural = "Paginas"
-        ordering = ["title"]
+        ordering = ["order", "title"]
