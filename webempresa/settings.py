@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "blog",
     "social.apps.SocialConfig",
     "pages.apps.PagesConfig",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,31 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Configuracion para las imagenes
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+# CKEDITOR
+
+CKEDITOR_CONFIGS = {
+    "default": {
+        "toolbar": "Custom",
+        "height": 400,
+        "width": 900,
+        "toolbar_Custom": [
+            ["Bold", "Italic", "Underline"],
+            [
+                "NumberedList",
+                "BulletedList",
+                "-",
+                "Outdent",
+                "Indent",
+                "-",
+                "JustifyLeft",
+                "JustifyCenter",
+                "JustifyRight",
+                "JustifyBlock",
+            ],
+            ["Link", "Unlink"],
+            ["RemoveFormat", "Source"],
+        ],
+    }
+}
