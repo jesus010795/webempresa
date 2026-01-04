@@ -6,5 +6,11 @@ from .models import Links
 class LinksModelAdmin(admin.ModelAdmin):
     readonly_fields = ("created", "updated")
 
+    def get_readonly_fields(self, request, obj=None):
+        if request.user.groups.filter(name="Personal").exists():
+            return ("created", "updated", "key", "name")
+
+        return ("created", "updated")
+
 
 admin.site.register(Links, LinksModelAdmin)
