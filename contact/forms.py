@@ -2,6 +2,34 @@ from django import forms
 
 
 class Contact(forms.Form):
-    name = forms.CharField(label="Nombre", required=True)
-    email = forms.EmailField(label="Email", required=True)
-    content = forms.CharField(label="Contenido", widget=forms.Textarea, required=True)
+    name = forms.CharField(
+        label="Nombre",
+        required=True,
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "placeholder": "Escribe tu nombre completo"}
+        ),
+        min_length=5,
+        max_length=100,
+    )
+    email = forms.EmailField(
+        label="Email",
+        required=True,
+        widget=forms.EmailInput(
+            attrs={"class": "form-control", "placeholder": "Escribe tu email"}
+        ),
+        min_length=5,
+        max_length=100,
+    )
+    content = forms.CharField(
+        label="Contenido",
+        widget=forms.Textarea(
+            attrs={
+                "class": "form-control",
+                "rows": 3,
+                "placeholder": "Escribe tu mensaje",
+            }
+        ),
+        required=True,
+        min_length=10,
+        max_length=500,
+    )

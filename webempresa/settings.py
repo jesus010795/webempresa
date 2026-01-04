@@ -161,3 +161,10 @@ CKEDITOR_CONFIGS = {
         ],
     }
 }
+
+# EMAIL CONFIG
+# Looking to send emails in production? Check out our Email API/SMTP product!
+EMAIL_HOST = "sandbox.smtp.mailtrap.io"
+EMAIL_HOST_USER = "7030aef5fc566b"
+EMAIL_HOST_PASSWORD = "61738bbaebdb59"
+EMAIL_PORT = "2525"
