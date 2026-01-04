@@ -17,7 +17,14 @@
               <span class="section-heading-lower">Contacto</span>
             </h2>
             <!-- Formulario de contacto -->
-             {{ form.as_p }}
+            {% if "ok" in request.GET %}
+              <p>Mensaje enviado correctamente</p>
+            {% endif %}
+            <form action="" method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <input type="submit" value="Enviar">
+            </form>
              <!--
             <form>
                 <div class="form-group">
